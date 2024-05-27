@@ -13,7 +13,6 @@
 NAME	=	push_swap
 CC		=	cc
 CFLAGS	=	-Wall -Wextra -Werror -g3 -O2 -fsanitize=address
-LDFLAGS	=	-g3 -O2 -fsanitize=address
 ARCHIVE	=	./libft/libft.a
 SRC		=	ft_string_check.c \
 			parsing.c \
@@ -30,15 +29,11 @@ SRC		=	ft_string_check.c \
 			sort_utils.c \
 			sort_five.c \
 			sort_till_100.c \
+			sort_large.c \
 			push_swap.c
 
 REMOVE	=	a.out \
 			a.out.dSYM
-
-EXE		=	turk
-
-TEST	=	ft_turk.c \
-			ft_turk_utils.c
 
 OBJ = $(SRC:.c=.o)
 

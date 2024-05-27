@@ -12,7 +12,6 @@
 
 #include "push_swap.h"
 
-
 t_stack *ft_alias(t_stack *list, int array_size)
 {
 	int len;
@@ -50,20 +49,45 @@ t_stack *ft_alias(t_stack *list, int array_size)
 	return final;
 }
 
+bool	arg_checker(char **argv)
+{
+	int	i;
+	int	j;
+
+	i = 1;
+	j = 0;
+	while (argv[i])
+	{
+		while (argv[i][j] && argv[i][j] == ' ')
+		{
+			j++;
+			if (argv[i][j] == '\0')
+			{
+				write(1, "Error\n", 6);
+				return (false);
+			}
+		}
+		i++;
+	}
+	return (true);
+}
+
 int	main(int ac, char **av)
 {
 	size_t	array_size;
 	char    **split_strings;
 	int		i;
-	int     *array = NULL; // gives seg fault
+	int     *array;
 
- 	// *array = NULL;
+	array = NULL;
 	i = 0;
 	array_size = 0;
 	if (ac < 2 || (av[1] && av[1][0] == '\0'))
 		return (printf ("Error\n"), 1);
 	while (++i < ac)
 	{
+		if (arg_checker(av) == false)
+			return(0);
 		split_strings = ft_string_check(av[i]);
 		if (!split_strings)
 		    return (1);
@@ -72,9 +96,6 @@ int	main(int ac, char **av)
 	ft_check_doubles(array, array_size);
 	t_stack *list = ft_arr_to_linkedlist(array, array_size);
 	list = ft_alias(list, array_size);
-	if (is_it_sorted(list))
-		return(0);//free everything
 	list = ft_sort_list(list);
-	// print(list);
 	return (0);
 }

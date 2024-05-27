@@ -34,16 +34,17 @@ t_stack	*ft_sort_list(t_stack *alias_list)
 	int		list_len;
 
 	list_len = list_size(alias_list);
-	// if (list_len == 1)
-	// 	return ;
+	if (list_len == 1)
+		return (NULL);
 	if (list_len >= 2 && list_len <= 34)
 		alias_list = sort_small(alias_list, stack_b, list_len);
 	else if (list_len >= 35 && list_len <= 134)
 		alias_list = sort_medium(alias_list, stack_b);
-	// else if (list_len >= 135)
-	// 	sort_large(alias_list, stack_b);
+	else if (list_len >= 135 && list_len <= 500)
+		sort_large(alias_list, stack_b);
 	else
-		printf("handle more");
+		ft_printf("Error\n");
+		// printf("handle more");
 	return(alias_list);
 }
 

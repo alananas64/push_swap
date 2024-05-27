@@ -22,7 +22,6 @@
 char	**ft_string_check(char *s)
 {
 	int			i;
-	int			k;
 	int			broken;
 	char		**splited_arr;
 	long long	result;
@@ -32,10 +31,7 @@ char	**ft_string_check(char *s)
 	splited_arr = ft_split(s, ' ');
 	while (splited_arr[i])
 	{
-		k = ft_arr_check(splited_arr, i, k);
-		if (k != -1)
-			break ;
-		i++;
+		ft_arr_check(splited_arr, i);
 		result = ft_atoll(splited_arr[i]);
 		broken = ft_int_max_min(result);
 		if (broken == 1)

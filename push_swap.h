@@ -49,11 +49,11 @@ void	count_sort(int arr[], int n, int exp);
 // int		*ft_join_array(int *int_arr, size_t int_arr_size, char **str_arr);
 int*	ft_join_array(size_t *array_size, int *array, char **str);
 
-int	ft_sign_check(char **splited_arr, int i);
-int	ft_check_digit(char **splited_arr, int i, int k);
-int	ft_int_max_min(long long result);
-int	ft_flag_check(int broken);
-int	ft_arr_check(char **splited_arr, int i, int k);
+int		ft_sign_check(char **splited_arr, int i);
+int		ft_check_digit(char digit);
+int		ft_int_max_min(long long result);
+int		ft_flag_check(int broken);
+int		ft_arr_check(char **splited_arr, int i);
 
 // debug funtions
 void	print_array(int *arr, size_t l);
@@ -131,6 +131,7 @@ int		get_min(t_stack *list);
 int		get_max(t_stack *list);
 int		get_pos(t_stack *list, int min);
 int		arr_len(int *arr);
+t_stack	*sort_large(t_stack *a, t_stack *b);
 
 //sort_till_100.c
 t_stack *sort_medium(t_stack *a, t_stack *b);
