@@ -3,56 +3,55 @@
 /*                                                        :::      ::::::::   */
 /*   sort_till_100.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nosman <nosman@student.42.fr>              +#+  +:+       +#+        */
+/*   By: myousaf <myousaf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 09:48:55 by nosman            #+#    #+#             */
-/*   Updated: 2024/05/27 13:56:55 by nosman           ###   ########.fr       */
+/*   Updated: 2024/05/28 10:25:40 by myousaf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+// pa in a row after the if condition:
+// "if ((*b)->value < (*b)->next->value)
+// 	sb(b);"
+// pa(b, a);
+// pa(b, a);
+// pa(b, a);
 t_stack	*sort_the_push_chunk(t_stack **a, t_stack **b)
 {
-	int	size;
-	(void)a;
 	int	max;
 	int	pos;
 	int	mid;
 
 	if (!b)
-		return(NULL);
-	size = list_size(*b);
-	while (size)
+		return (NULL);
+	while (list_size(*b))
 	{
 		max = get_max(*b);
 		pos = get_pos(*b, max);
-		size = list_size(*b);
-		mid = size / 2;
+		mid = list_size(*b) / 2;
 		if ((*b)->value == max)
 			pa(b, a);
 		else if (pos <= mid)
 			rb(b);
 		else
 			rrb(b);
-		if (size == 3)
+		if (list_size(*b) == 3)
 			break ;
 	}
 	if ((*b)->value < (*b)->next->value)
 		sb(b);
-	// pa(b, a);
-	// pa(b, a);
-	// pa(b, a);
-	while(*b)
+	while (*b)
 		pa(b, a);
-	return(*a);
+	return (*a);
 }
 
 void	push_the_chunk(t_stack **a, t_stack **b, int min, int max)
 {
-
 	int	size;
 	int	x;
+
 	x = list_size(*a);
 	while (x)
 	{
@@ -74,6 +73,11 @@ void	push_the_chunk(t_stack **a, t_stack **b, int min, int max)
 	}
 }
 
+// code block before return statement
+// "if(a->value > a->next->value)
+// 	sa(&a);
+// else if (a->next->value > a->next->next->value)
+// else"
 t_stack	*sort_medium(t_stack *a, t_stack *b)
 {
 	int	size;
@@ -81,46 +85,25 @@ t_stack	*sort_medium(t_stack *a, t_stack *b)
 	int	max;
 	int	tmp;
 	int	i;
-	int m;
 
 	i = 0;
-	m = list_size(a);
 	size = list_size(a);
 	min = size / 4;
 	min--;
 	max = min;
-	while (m > 34)
+	while (size > 34)
 	{
 		push_the_chunk(&a, &b, i, max);
-		m = list_size(a);
+		size = list_size(a);
 		i = max + 1;
 		tmp = max;
 		max += min;
 	}
-	// printf("\n\nstart\n\n");
-	// print(a);
-	// print(b);
-	// printf("\n inside medium before going in sort the push chunck \n");
-	// print(a);
-	// print(b);
 	a = sort_the_push_chunk(&a, &b);
-	// printf("\nbefore going in sort small\n");
-	// print(a);
-	// print(b);
 	a = sort_small(a, b, 35);
-	// printf("\nafter coming out of sort small\n");
-	// print(a);
-	// if(a->value > a->next->value)
-	// 	sa(&a);
-	// else if (a->next->value > a->next->next->value)
-	// else
-	// 	printf("\n_________________\n");
-	// printf("_____%d_______\n", list_size(a));
-	// printf("\n\nend\n\n");
-	// print(a);
-	// print(b);
-	return(a);
+	return (a);
 }
+
 // t_stack	*sort_medium(t_stack *a, t_stack *b)
 // {
 // 	int	size;
@@ -154,4 +137,3 @@ t_stack	*sort_medium(t_stack *a, t_stack *b)
 // 	a = sort_the_push_chunk(&a, &b);
 // 	return(a);
 // }
-

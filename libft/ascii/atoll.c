@@ -6,7 +6,7 @@
 /*   By: myousaf <myousaf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/07 07:49:18 by myousaf           #+#    #+#             */
-/*   Updated: 2024/04/09 14:46:09 by myousaf          ###   ########.fr       */
+/*   Updated: 2024/05/28 02:03:51 by myousaf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,6 @@ long long	ft_atoll(const char *str)
 		i++;
 	}
 	if (result < INT_MIN || result > INT_MAX)
-		perr ("not in int range");
-	// printf ("<<<<<<HERE>>>>>>");
+		perr (7);
 	return (result * sign);
 }
-// int max

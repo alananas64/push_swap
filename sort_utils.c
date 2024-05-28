@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   sort_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nosman <nosman@student.42.fr>              +#+  +:+       +#+        */
+/*   By: myousaf <myousaf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 15:29:16 by nosman            #+#    #+#             */
-/*   Updated: 2024/05/26 11:33:02 by nosman           ###   ########.fr       */
+/*   Updated: 2024/05/28 01:48:26 by myousaf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int list_size(t_stack *list)
+int	list_size(t_stack *list)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (!list)
@@ -27,7 +27,7 @@ int list_size(t_stack *list)
 	return (i);
 }
 
-int get_min(t_stack *list)
+int	get_min(t_stack *list)
 {
 	int	min;
 
@@ -41,7 +41,7 @@ int get_min(t_stack *list)
 	return (min);
 }
 
-int get_max(t_stack *list)
+int	get_max(t_stack *list)
 {
 	int	max;
 
@@ -55,14 +55,11 @@ int get_max(t_stack *list)
 	return (max);
 }
 
-int get_pos(t_stack *list, int min)
+int	get_pos(t_stack *list, int min)
 {
 	int	pos;
 
 	pos = 0;
-	// printf("________LIST is ________\n");
-	// print(list);
-	// printf("_________eof b_______\n");
 	while (list != NULL && list->value != min)
 	{
 		list = list -> next;
@@ -72,12 +69,12 @@ int get_pos(t_stack *list, int min)
 	return (pos);
 }
 
-int arr_len(int *arr)
+int	arr_len(int *arr)
 {
 	int	i;
 
 	i = 0;
-	while(arr[i])
+	while (arr[i])
 		i++;
 	return (i);
 }

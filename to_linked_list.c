@@ -1,16 +1,36 @@
-#include<stdio.h>
-#include<stdlib.h>
-#include "push_swap.h"
-// struct Node
-// {
-// 	int data;
-// 	struct Node* next;
-// };
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   to_linked_list.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: myousaf <myousaf@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/05/27 18:54:15 by myousaf           #+#    #+#             */
+/*   Updated: 2024/05/28 10:26:34 by myousaf          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-void insert(t_stack **root, int item)
+#include "push_swap.h"
+
+/***
+ * debugging functions used for printing
+ * the list
+ */ 
+void	print(t_stack *root)
 {
-	t_stack *temp;
-	t_stack *ptr;
+	printf("root->");
+	while (root != NULL)
+	{
+		printf("{%d}->", root->value);
+		root = root->next;
+	}
+	printf("{NULL}\n");
+}
+
+void	insert(t_stack **root, int item)
+{
+	t_stack	*temp;
+	t_stack	*ptr;
 
 	temp = (t_stack *) malloc(sizeof(t_stack));
 	if (!temp)
@@ -28,36 +48,14 @@ void insert(t_stack **root, int item)
 	}
 }
 
-void print(t_stack* root)
+t_stack	*ft_arr_to_linkedlist(int arr[], int n)
 {
-	while (root != NULL)
-	{
-		printf("%d->", root->value);
-		root = root->next;
-	}
-	printf("\n");
-}
+	t_stack	*root;
+	int		i;
 
-t_stack *ft_arr_to_linkedlist(int arr[], int n)
-{
-	t_stack *root = NULL;
-	int i;
-
-	i = 0;
-	while (i < n)
-	{
+	i = -1;
+	root = NULL;
+	while (++i < n)
 		insert(&root, arr[i]);
-		i++;
-	}
 	return (root);
 }
-// int main()
-// {
-// 	int arr[] = { 0, 2, 3, 5, 1 };
-// 	int n = sizeof(arr) / sizeof(arr[0]);
-// 	//i think we should maloc here for the whole linked ist
-// 	struct Node* root = arrayToList(arr, n);
-// 	print(root);
-// 	return 0;
-// }
-

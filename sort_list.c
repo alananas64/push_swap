@@ -3,20 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   sort_list.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nosman <nosman@student.42.fr>              +#+  +:+       +#+        */
+/*   By: myousaf <myousaf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 15:28:17 by nosman            #+#    #+#             */
-/*   Updated: 2024/05/27 14:08:30 by nosman           ###   ########.fr       */
+/*   Updated: 2024/05/27 19:42:05 by myousaf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+// if (is_it_sorted(alias_list))
+// 	return();
 t_stack	*sort_small(t_stack *alias_list, t_stack *stack_b, int stack_size)
 {
-	// (void)stack_b;
-	// if (is_it_sorted(alias_list))
-	// 	return();
 	if (stack_size == 2)
 		sa(&alias_list);
 	else if (stack_size == 3)
@@ -25,14 +24,15 @@ t_stack	*sort_small(t_stack *alias_list, t_stack *stack_b, int stack_size)
 		alias_list = sort_four(alias_list, stack_b);
 	else
 		alias_list = sort_more(alias_list, stack_b);
-	return(alias_list);
+	return (alias_list);
 }
 
 t_stack	*ft_sort_list(t_stack *alias_list)
 {
-	t_stack *stack_b = NULL;
+	t_stack	*stack_b;
 	int		list_len;
 
+	stack_b = NULL;
 	list_len = list_size(alias_list);
 	if (list_len == 1)
 		return (NULL);
@@ -44,8 +44,7 @@ t_stack	*ft_sort_list(t_stack *alias_list)
 		sort_large(alias_list, stack_b);
 	else
 		ft_printf("Error\n");
-		// printf("handle more");
-	return(alias_list);
+	return (alias_list);
 }
 
 ///////// sort small is working here

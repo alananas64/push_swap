@@ -3,99 +3,58 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nosman <nosman@student.42.fr>              +#+  +:+       +#+        */
+/*   By: myousaf <myousaf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/07 11:34:32 by myousaf           #+#    #+#             */
-/*   Updated: 2024/05/27 14:08:08 by nosman           ###   ########.fr       */
+/*   Updated: 2024/05/28 10:36:58 by myousaf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_stack *ft_alias(t_stack *list, int array_size)
+int	*parse(int ac, char **av)
 {
-	int len;
-	int	index[2];
-	int num;
-	int	counter;
-	int *arr;
-	t_stack *temp;
-	t_stack *head;
-	t_stack *final;
+	size_t	array_size;
+	char	**split_strings;
+	int		i;
+	int		*array;
 
-	len = list_size(list);
-	temp = NULL;
-	index[0] = 0;
-	arr = malloc(sizeof(int) * (len + 1));
-	head = list;
-	while (index[0] < len && list)
+	i = 0;
+	array = NULL;
+	array_size = 0;
+	while (++i < ac)
 	{
-		temp = head;
-		num = list->value;
-		index[1] = 0;
-		counter = 0;
-		while (index[1] < len && temp != NULL)
-		{
-			if (num > temp->value)
-				counter++;
-			temp = temp->next;
-			index[1]++;
-		}
-		arr[index[0]] = counter;
-		list = list->next;
-		index[0]++;
+		split_strings = ft_string_check(av[i]);
+		if (!split_strings)
+			(ft_free_arr(split_strings), perr (6));
+		array = ft_join_array(&array_size, array, split_strings);
 	}
-	final = ft_arr_to_linkedlist(arr, array_size);
-	return final;
+	ft_check_doubles(array, array_size);
+	return (array);
 }
 
-bool	arg_checker(char **argv)
+// ft_printf ("ar_sz= {%i} \n", array_size);
+void	ft_sort(int *array, int array_size, t_stack *list)
 {
-	int	i;
-	int	j;
-
-	i = 1;
-	j = 0;
-	while (argv[i])
-	{
-		while (argv[i][j] && argv[i][j] == ' ')
-		{
-			j++;
-			if (argv[i][j] == '\0')
-			{
-				write(1, "Error\n", 6);
-				return (false);
-			}
-		}
-		i++;
-	}
-	return (true);
+	list = ft_arr_to_linkedlist(array, array_size);
+	list = ft_alias(list, array_size);
+	// check if sorted
+	list = ft_sort_list(list);
 }
 
 int	main(int ac, char **av)
 {
-	size_t	array_size;
-	char    **split_strings;
-	int		i;
-	int     *array;
+	int		*array;
+	t_stack	list;
 
-	array = NULL;
-	i = 0;
-	array_size = 0;
 	if (ac < 2 || (av[1] && av[1][0] == '\0'))
-		return (printf ("Error\n"), 1);
-	while (++i < ac)
-	{
-		if (arg_checker(av) == false)
-			return(0);
-		split_strings = ft_string_check(av[i]);
-		if (!split_strings)
-		    return (1);
-		array = ft_join_array(&array_size, array, split_strings);
-	}
-	ft_check_doubles(array, array_size);
-	t_stack *list = ft_arr_to_linkedlist(array, array_size);
-	list = ft_alias(list, array_size);
-	list = ft_sort_list(list);
+		return (1);
+	if (arg_checker(av) == false)
+		return (2);
+	print_array (array, sizeof(&array) / sizeof(array[0]));
+	ft_sort(array, sizeof(&array) / sizeof(array[0]), &list);
 	return (0);
 }
+// int i = 1;
+// while (av[i] != NULL)
+// 	ft_printf ("result= {%c}\n", *av[i++]);

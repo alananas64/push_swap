@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: nosman <nosman@student.42.fr>              +#+  +:+       +#+         #
+#    By: myousaf <myousaf@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/07 11:33:45 by myousaf           #+#    #+#              #
-#    Updated: 2024/05/22 09:49:30 by nosman           ###   ########.fr        #
+#    Updated: 2024/05/27 23:54:54 by myousaf          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,6 @@ CC		=	cc
 CFLAGS	=	-Wall -Wextra -Werror -g3 -O2 -fsanitize=address
 ARCHIVE	=	./libft/libft.a
 SRC		=	ft_string_check.c \
-			parsing.c \
 			parsing_utils.c \
 			string_check_utils.c \
 			to_linked_list.c \
@@ -30,10 +29,14 @@ SRC		=	ft_string_check.c \
 			sort_five.c \
 			sort_till_100.c \
 			sort_large.c \
+			stack_op_utils.c \
+			swap_utils.c \
 			push_swap.c
 
 REMOVE	=	a.out \
-			a.out.dSYM
+			a.out.dSYM \
+			$(ARCHIVE)
+			
 
 OBJ = $(SRC:.c=.o)
 
@@ -46,19 +49,13 @@ $(ARCHIVE):
 	@make -s -C libft
 
 clean:
-	make clean -s -C libft
+	@make clean -s -C libft
 	@$(RM) $(OBJ)
 
 fclean: clean
-	make fclean -s -C libft
-	@$(RM) -fr $(NAME) $(REMOVE)
+	@make fclean -s -C libft
+	@$(RM)r $(NAME) $(REMOVE)
 
 re: fclean all
-
-debug: all
-	$(CC) $(CFLAGS) $(LDFLAGS) $(OBJ) $(ARCHIVE) -o $(NAME)
-
-test:
-	$(CC) $(CFLAGS) $(LDFLAGS) $(TEST) -o $(EXE)
 
 .PHONY: all clean fclean re bonus debug

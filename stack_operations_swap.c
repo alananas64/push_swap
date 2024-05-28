@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   stack_operations_swap.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nosman <nosman@student.42.fr>              +#+  +:+       +#+        */
+/*   By: myousaf <myousaf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 10:56:13 by nosman            #+#    #+#             */
-/*   Updated: 2024/04/19 10:47:01 by nosman           ###   ########.fr       */
+/*   Updated: 2024/05/27 18:57:16 by myousaf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void swap(t_stack **head)
+void	swap(t_stack **head)
 {
-	t_stack *temp;
+	t_stack	*temp;
 
 	if ((*head != NULL) && ((*head)->next != NULL))
 	{

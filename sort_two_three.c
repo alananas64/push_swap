@@ -1,16 +1,28 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   sort_two_three.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: myousaf <myousaf@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/05/27 19:02:44 by myousaf           #+#    #+#             */
+/*   Updated: 2024/05/27 19:46:10 by myousaf          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 bool	is_it_sorted(t_stack *list)
 {
-	if(!list)
-		return(1);
-	while(list->next)
+	if (!list)
+		return (1);
+	while (list->next)
 	{
-		if(list->value > list->next->value)
-			return(false);
+		if (list->value > list->next->value)
+			return (false);
 		list = list->next;
 	}
-	return(true);
+	return (true);
 }
 
 t_stack	*find_max(t_stack *stack)
@@ -32,6 +44,7 @@ t_stack	*find_max(t_stack *stack)
 	}
 	return (max_node);
 }
+
 void	sort_three(t_stack **a)
 {
 	t_stack	*biggest_node;
@@ -45,7 +58,8 @@ void	sort_three(t_stack **a)
 		sa(a);
 }
 
-// int which_to_sort(t_stack *a)//my list should be named a (in the subject stack a, b)
+//my list should be named a (in the subject stack a, b)
+// int which_to_sort(t_stack *a)
 // {
 // 	// t_stack *b;
 
@@ -59,7 +73,8 @@ void	sort_three(t_stack **a)
 // 		// 	sort_five(&a);
 // 		else
 // 			printf("hello");
-// 		// ft_turk(&list, &b);//how to ust the other stack on the pic?it should be null ig
+// // ft_turk(&list, &b);
+// // how to ust the other stack on the pic?it should be null ig
 // 	}
 // 	// free_stack(&list);
 // 	return(0);

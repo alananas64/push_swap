@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_perr.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nosman <nosman@student.42.fr>              +#+  +:+       +#+        */
+/*   By: myousaf <myousaf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 19:56:25 by myousaf           #+#    #+#             */
-/*   Updated: 2024/04/23 17:16:38 by nosman           ###   ########.fr       */
+/*   Updated: 2024/05/28 02:09:12 by myousaf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,29 @@
 
 void	ft_border(size_t i)
 {
-	ft_printf("\e[31m");
-	while (i > 0)
-	{
+	while (--i > 0)
 		ft_printf("-");
-		i--;
-	}
-	ft_printf("\e[0m\n");
 }
 
-void	perr(char *str)
+void	perr(int int_status)
 {
-	size_t	i;
-
-	i = ft_strlen(str) + 14;
-	ft_border(i);
-	ft_printf("\e[1;31m Error ya: ");
-	ft_printf("%s\e[22;0m\n", str);
-	ft_border(i);
-	exit(5);
+	ft_printf("\e[31m");
+	write (2, "Error\n", 6);
+	ft_printf("\e[0m");
+	exit (int_status);
 }
+
+// void	perr(char *str)
+// {
+// 	size_t	i;
+
+// 	i = ft_strlen(str) + 14;
+// 	ft_border(i);
+// 	ft_printf("\e[1;31m Error ya: ");
+// 	ft_printf("%s\e[22;0m\n", str);
+// 	ft_border(i);
+// 	exit(5);
+// }
 
 void	mperr(char *str)
 {

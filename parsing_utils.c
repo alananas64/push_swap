@@ -6,7 +6,7 @@
 /*   By: myousaf <myousaf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/07 08:02:28 by myousaf           #+#    #+#             */
-/*   Updated: 2024/04/13 12:32:42 by myousaf          ###   ########.fr       */
+/*   Updated: 2024/05/27 19:32:36 by myousaf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	ft_free_arr(char **arr)
 	free(arr);
 }
 
-void ft_free_arr_int(int *arr)
+void	ft_free_arr_int(int *arr)
 {
 	if (!arr)
 		return ;
