@@ -6,27 +6,33 @@
 /*   By: myousaf <myousaf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 19:40:48 by myousaf           #+#    #+#             */
-/*   Updated: 2024/05/28 02:04:28 by myousaf          ###   ########.fr       */
+/*   Updated: 2024/05/30 20:47:34 by myousaf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-bool	arg_checker(char **argv)
+bool	arg_checker(char **av)
 {
 	int	i;
 	int	j;
 
-	i = 1;
+	i = 0;
 	j = 0;
-	while (argv[i])
+	while (av[++i])
 	{
-		while (argv[i][j] && argv[i][j] == ' ')
+		while (av[i][j] && av[i][j] == ' ')
 		{
 			j++;
-			if (argv[i][j] == '\0')
-				return (write(1, "Error\n", 6), false);
+			if (av[i][j] == '\0')
+				return (false);
 		}
+	}
+	i = 0;
+	while (av[i])
+	{
+		if (av[i][0] == '\0')
+			return (false);
 		i++;
 	}
 	return (true);

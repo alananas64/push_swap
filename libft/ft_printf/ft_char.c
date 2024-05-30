@@ -6,7 +6,7 @@
 /*   By: myousaf <myousaf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 19:56:25 by myousaf           #+#    #+#             */
-/*   Updated: 2024/04/13 12:04:38 by myousaf          ###   ########.fr       */
+/*   Updated: 2024/05/29 20:24:27 by myousaf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	ft_putstr(char *s)
 
 	i = 0;
 	len = 0;
-	if (s == NULL)
+	if (s == NULL || !*s)
 		s = "(null)";
 	while (s[i])
 	{

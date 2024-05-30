@@ -6,14 +6,12 @@
 /*   By: myousaf <myousaf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 15:28:17 by nosman            #+#    #+#             */
-/*   Updated: 2024/05/27 19:42:05 by myousaf          ###   ########.fr       */
+/*   Updated: 2024/05/30 20:24:00 by myousaf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// if (is_it_sorted(alias_list))
-// 	return();
 t_stack	*sort_small(t_stack *alias_list, t_stack *stack_b, int stack_size)
 {
 	if (stack_size == 2)
@@ -35,7 +33,7 @@ t_stack	*ft_sort_list(t_stack *alias_list)
 	stack_b = NULL;
 	list_len = list_size(alias_list);
 	if (list_len == 1)
-		return (NULL);
+		exit (0);
 	if (list_len >= 2 && list_len <= 34)
 		alias_list = sort_small(alias_list, stack_b, list_len);
 	else if (list_len >= 35 && list_len <= 134)
@@ -43,7 +41,7 @@ t_stack	*ft_sort_list(t_stack *alias_list)
 	else if (list_len >= 135 && list_len <= 500)
 		sort_large(alias_list, stack_b);
 	else
-		ft_printf("Error\n");
+		perr (9);
 	return (alias_list);
 }
 

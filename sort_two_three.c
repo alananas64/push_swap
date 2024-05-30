@@ -6,11 +6,24 @@
 /*   By: myousaf <myousaf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/27 19:02:44 by myousaf           #+#    #+#             */
-/*   Updated: 2024/05/27 19:46:10 by myousaf          ###   ########.fr       */
+/*   Updated: 2024/05/28 16:27:29 by myousaf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+bool	sorted(t_stack *list)
+{
+	if (!list)
+		return (1);
+	while (list->next)
+	{
+		if (list->value > list->next->value)
+			return (false);
+		list = list->next;
+	}
+	return (true);
+}
 
 bool	is_it_sorted(t_stack *list)
 {

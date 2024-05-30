@@ -6,7 +6,7 @@
 /*   By: myousaf <myousaf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 10:40:33 by myousaf           #+#    #+#             */
-/*   Updated: 2024/05/28 00:21:23 by myousaf          ###   ########.fr       */
+/*   Updated: 2024/05/30 20:20:22 by myousaf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,6 +122,7 @@ t_stack	*ft_sort_list(t_stack *alias_list);
 
 //sort_two_three.c
 bool	is_it_sorted(t_stack *list);
+bool	sorted(t_stack *list);
 t_stack	*find_max(t_stack *stack);
 void	sort_three(t_stack **a);
 
@@ -152,7 +153,7 @@ t_stack	*ft_alias(t_stack *list, int array_size);
  * 6	ft_string_check: error spilting strings
  * 7	atoll: value not in range of int
  * 8	ft_check_doubles: same value repeated twice
- * 9	
+ * 9	ft_sort_list: invalid ammount of numbers
  * 10	
  * 11	
  * 12	
