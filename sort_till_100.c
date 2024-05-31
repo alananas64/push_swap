@@ -3,21 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   sort_till_100.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: myousaf <myousaf@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nosman <nosman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 09:48:55 by nosman            #+#    #+#             */
-/*   Updated: 2024/05/28 10:25:40 by myousaf          ###   ########.fr       */
+/*   Updated: 2024/05/31 10:04:50 by nosman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// pa in a row after the if condition:
-// "if ((*b)->value < (*b)->next->value)
-// 	sb(b);"
-// pa(b, a);
-// pa(b, a);
-// pa(b, a);
 t_stack	*sort_the_push_chunk(t_stack **a, t_stack **b)
 {
 	int	max;
@@ -73,11 +67,6 @@ void	push_the_chunk(t_stack **a, t_stack **b, int min, int max)
 	}
 }
 
-// code block before return statement
-// "if(a->value > a->next->value)
-// 	sa(&a);
-// else if (a->next->value > a->next->next->value)
-// else"
 t_stack	*sort_medium(t_stack *a, t_stack *b)
 {
 	int	size;
@@ -103,37 +92,3 @@ t_stack	*sort_medium(t_stack *a, t_stack *b)
 	a = sort_small(a, b, 35);
 	return (a);
 }
-
-// t_stack	*sort_medium(t_stack *a, t_stack *b)
-// {
-// 	int	size;
-// 	int	min;
-// 	int	max;
-// 	int	tmp;
-// 	int	i;
-
-// 	i = 0;
-// 	size = list_size(a);
-// 	min = size / 4;
-// 	min--;
-// 	max = min;
-// 	while (max < size)
-// 	{
-// 		push_the_chunk(&a, &b, i, max);
-// 		i = max + 1;
-// 		tmp = max;
-// 		max += min;
-// 	}
-// 	// if (size - tmp == 4)
-// 	// 	sort_three(&a);
-// 	// else
-// 	// 	sort_more(a, b);
-// 	// sort_the_push_chunk(a, b);
-// 	size = list_size(a);
-// 	if (size == 3)
-// 		sort_three(&a);
-// 	else
-// 		a = sort_more(a, b);
-// 	a = sort_the_push_chunk(&a, &b);
-// 	return(a);
-// }

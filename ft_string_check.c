@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_string_check.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: myousaf <myousaf@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nosman <nosman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 19:40:48 by myousaf           #+#    #+#             */
-/*   Updated: 2024/05/30 20:47:34 by myousaf          ###   ########.fr       */
+/*   Updated: 2024/05/31 10:03:31 by nosman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,9 +46,6 @@ int	*ft_join_array(size_t *array_size, int *array, char **str)
 
 	new_array = NULL;
 	ft_memset(i, 0, sizeof(i));
-
-// ft_printf ("i[0]= {%i}\ni[0]= {%i}\n", i[0], i[1]); // debug
-
 	len = ft_strarr_len(str);
 	new_array = malloc(sizeof(int) * (len + *array_size));
 	if (!new_array)

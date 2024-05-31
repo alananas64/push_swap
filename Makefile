@@ -6,7 +6,7 @@
 #    By: myousaf <myousaf@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/07 11:33:45 by myousaf           #+#    #+#              #
-#    Updated: 2024/05/30 20:52:44 by myousaf          ###   ########.fr        #
+#    Updated: 2024/05/31 16:45:09 by myousaf          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,6 @@ SRC		=	ft_string_check.c \
 			sort_four_more.c \
 			sort_list.c \
 			sort_utils.c \
-			sort_five.c \
 			sort_till_100.c \
 			sort_large.c \
 			stack_op_utils.c \
@@ -36,7 +35,7 @@ SRC		=	ft_string_check.c \
 REMOVE	=	a.out \
 			a.out.dSYM \
 			$(ARCHIVE)
-			
+
 
 OBJ = $(SRC:.c=.o)
 

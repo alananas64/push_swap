@@ -3,18 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   sort_four_more.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: myousaf <myousaf@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nosman <nosman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 15:31:38 by nosman            #+#    #+#             */
-/*   Updated: 2024/05/27 22:11:58 by myousaf          ###   ########.fr       */
+/*   Updated: 2024/05/31 10:05:16 by nosman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// pa after while loop
-// pa(&stack_b, &stack_a);
-// pa(&stack_b, &stack_a);
 static t_stack	*uncle(t_stack *stack_a, t_stack *stack_b)
 {
 	pb(&stack_a, &stack_b);
@@ -53,8 +50,6 @@ t_stack	*sort_four(t_stack *alias_list, t_stack *stack_b)
 	return (alias_list);
 }
 
-// printf ("<<<<<< i is {%i} >>>>>>\n", i);
-// use it to debug 'i'
 t_stack	*sort_more(t_stack *a, t_stack *b)
 {
 	int	min;

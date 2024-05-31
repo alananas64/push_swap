@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: myousaf <myousaf@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nosman <nosman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/07 11:34:32 by myousaf           #+#    #+#             */
-/*   Updated: 2024/05/30 20:48:18 by myousaf          ###   ########.fr       */
+/*   Updated: 2024/05/31 10:10:05 by nosman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int	*parse(int ac, char **av, size_t *arr_sz)
 			perr (6);
 		}
 	}
-	ft_check_doubles(array, *arr_sz);
+	ft_check_doubles(array, *arr_sz);// what about freeing after this ?
 	return (array);
 }
 
@@ -67,7 +67,7 @@ int	main(int ac, char **av)
 	array = NULL;
 	arr_sz = 0;
 	if (ac < 2)
-		return (1);
+		return (0); // i changed it from return(1) to 0
 	if (arg_checker(av) == false)
 		perr (2);
 	array = parse (ac, av, &arr_sz);
