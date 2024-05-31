@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nosman <nosman@student.42.fr>              +#+  +:+       +#+        */
+/*   By: myousaf <myousaf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/07 11:34:32 by myousaf           #+#    #+#             */
-/*   Updated: 2024/05/31 10:10:05 by nosman           ###   ########.fr       */
+/*   Updated: 2024/05/31 17:28:27 by myousaf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,19 +29,24 @@ int	*parse(int ac, char **av, size_t *arr_sz)
 			perr (6);
 		}
 		array = ft_join_array(arr_sz, array, split_strings);
-		if (NULL == array)
+		if ((NULL == array) || (ft_check_doubles(array, *arr_sz) == 1))
 		{
 			ft_free_arr_int(array);
 			perr (6);
 		}
 	}
-	ft_check_doubles(array, *arr_sz);// what about freeing after this ?
+	// if (ft_check_doubles(array, *arr_sz) == 1) // what about freeing after this?
+	// {
+	// 	ft_free_arr_int(array);
+	// 	perr (8);
+	// }
 	return (array);
 }
 
 void	ft_sort(int *array, int array_size, t_stack *list)
 {
 	list = ft_arr_to_linkedlist(array, array_size);
+	
 	list = ft_alias(list, array_size);
 	if (sorted(list))
 		return ;
@@ -67,7 +72,7 @@ int	main(int ac, char **av)
 	array = NULL;
 	arr_sz = 0;
 	if (ac < 2)
-		return (0); // i changed it from return(1) to 0
+		return (0);
 	if (arg_checker(av) == false)
 		perr (2);
 	array = parse (ac, av, &arr_sz);
