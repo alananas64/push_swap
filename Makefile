@@ -6,7 +6,7 @@
 #    By: myousaf <myousaf@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/07 11:33:45 by myousaf           #+#    #+#              #
-#    Updated: 2024/05/29 20:28:03 by myousaf          ###   ########.fr        #
+#    Updated: 2024/05/30 20:52:44 by myousaf          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,7 +46,7 @@ $(NAME): $(OBJ) $(ARCHIVE)
 all:$(NAME)
 
 $(ARCHIVE):
-	@make -s -C libft
+	@make -C libft
 
 clean:
 	@make clean -s -C libft

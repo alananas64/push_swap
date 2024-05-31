@@ -6,7 +6,7 @@
 /*   By: myousaf <myousaf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 11:11:02 by myousaf           #+#    #+#             */
-/*   Updated: 2024/04/09 14:03:33 by myousaf          ###   ########.fr       */
+/*   Updated: 2024/05/30 20:52:37 by myousaf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 size_t	ft_strlen(const char *str)
 {
 	size_t	i;
-
+	int j =0;
 	i = 0;
 	while (str[i])
 		i++;

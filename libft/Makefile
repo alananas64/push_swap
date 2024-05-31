@@ -6,14 +6,13 @@
 #    By: myousaf <myousaf@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/08 15:41:48 by myousaf           #+#    #+#              #
-#    Updated: 2024/05/01 10:51:59 by myousaf          ###   ########.fr        #
+#    Updated: 2024/05/30 20:52:08 by myousaf          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	=	libft.a
 CC		=	cc
 CFLAGS	=	-Wall -Wextra -Werror -g3 -O2 -fsanitize=address
-# LDFLAGS	=	-g3 -O2 -fsanitize=address
 FR		=	libft.a \
 			.vscode \
 			push_swap.dSYM \
