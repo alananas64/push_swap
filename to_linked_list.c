@@ -3,19 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   to_linked_list.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: myousaf <myousaf@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nosman <nosman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/27 18:54:15 by myousaf           #+#    #+#             */
-/*   Updated: 2024/05/30 20:18:15 by myousaf          ###   ########.fr       */
+/*   Updated: 2024/05/31 10:06:32 by nosman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/***
- * debugging functions used for printing
- * the list
- */ 
 void	print(t_stack *root)
 {
 	ft_printf("root->");

@@ -1,18 +1,4 @@
-1) the program should exit when ever there is an error in the parsing
-2) we have alot of functions in one folder....eeds organizing
-3) when we have three num and the smallest in the last and the gratest in the middle
-   ..printing the stack after sorting doesn't printf the last one
-   or acually there is only operation happened
-
-
-
-
-
-
-
-
-recheck for digit...like if i added 'uncle' and it worked and it gives it zero 
-
-   when ./push_swap
-   when ./push_swap 1
-
+check mini
+./push_swap "5 2 18 76 9 009"
+./push_swap 453 68 6666 8 99 4 "   "88888
+./push_swap   it should give the prompt back not error prompt 

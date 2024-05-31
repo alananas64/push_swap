@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_two_three.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: myousaf <myousaf@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nosman <nosman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/27 19:02:44 by myousaf           #+#    #+#             */
-/*   Updated: 2024/05/28 16:27:29 by myousaf          ###   ########.fr       */
+/*   Updated: 2024/05/31 10:05:58 by nosman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,25 +70,3 @@ void	sort_three(t_stack **a)
 	if ((*a)->value > (*a)->next->value)
 		sa(a);
 }
-
-//my list should be named a (in the subject stack a, b)
-// int which_to_sort(t_stack *a)
-// {
-// 	// t_stack *b;
-
-// 	if(!is_it_sorted(a))
-// 	{
-// 		if(stack_length(a) == 2)
-// 			sa(&a); // swap
-// 		else if (stack_length(a) == 3)
-// 			sort_three(&a);
-// 		// else if (stack_length(a) == 5)
-// 		// 	sort_five(&a);
-// 		else
-// 			printf("hello");
-// // ft_turk(&list, &b);
-// // how to ust the other stack on the pic?it should be null ig
-// 	}
-// 	// free_stack(&list);
-// 	return(0);
-// }

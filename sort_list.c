@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_list.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: myousaf <myousaf@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nosman <nosman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 15:28:17 by nosman            #+#    #+#             */
-/*   Updated: 2024/05/30 20:24:00 by myousaf          ###   ########.fr       */
+/*   Updated: 2024/05/31 10:04:33 by nosman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,3 @@ t_stack	*ft_sort_list(t_stack *alias_list)
 		perr (9);
 	return (alias_list);
 }
-
-///////// sort small is working here
-///////// sort medium is working here 
