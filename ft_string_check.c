@@ -6,7 +6,7 @@
 /*   By: myousaf <myousaf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 19:40:48 by myousaf           #+#    #+#             */
-/*   Updated: 2024/05/31 17:25:01 by myousaf          ###   ########.fr       */
+/*   Updated: 2024/05/31 23:07:01 by myousaf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ int	*ft_join_array(size_t *array_size, int *array, char **str)
 		new_array[i[0] + i[1]] = ft_atoi(str[i[1]]);
 		i[1]++;
 	}
-	ft_free_arr(str);
+	free_arr(str);
 	if (*array_size)
 		free(array);
 	*array_size += len;
@@ -82,7 +82,6 @@ int	ft_check_doubles(int *splited_arr, int arrlen)
 			j++;
 		if ((j < arrlen) && (splited_arr[i] == splited_arr[j]))
 			return (1);
-			// perr (8);
 		i++;
 	}
 	return (0);

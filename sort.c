@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_till_100.c                                    :+:      :+:    :+:   */
+/*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nosman <nosman@student.42.fr>              +#+  +:+       +#+        */
+/*   By: myousaf <myousaf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 09:48:55 by nosman            #+#    #+#             */
-/*   Updated: 2024/05/31 10:04:50 by nosman           ###   ########.fr       */
+/*   Updated: 2024/05/31 19:28:14 by myousaf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,6 @@ t_stack	*sort_medium(t_stack *a, t_stack *b)
 	int	size;
 	int	min;
 	int	max;
-	int	tmp;
 	int	i;
 
 	i = 0;
@@ -80,15 +79,36 @@ t_stack	*sort_medium(t_stack *a, t_stack *b)
 	min = size / 4;
 	min--;
 	max = min;
-	while (size > 34)
+	while (list_size(a) > 34)
 	{
 		push_the_chunk(&a, &b, i, max);
-		size = list_size(a);
 		i = max + 1;
-		tmp = max;
 		max += min;
 	}
 	a = sort_the_push_chunk(&a, &b);
-	a = sort_small(a, b, 35);
+	a = sort_more(a, b);
+	return (a);
+}
+
+t_stack	*sort_large(t_stack *a, t_stack *b)
+{
+	int	size;
+	int	min;
+	int	max;
+	int	i;
+
+	i = 0;
+	size = list_size(a);
+	min = size / 9;
+	min--;
+	max = min;
+	while (list_size(a) > 34)
+	{
+		push_the_chunk(&a, &b, i - 1, max + 4);
+		i = max + 2;
+		max += min;
+	}
+	a = sort_the_push_chunk(&a, &b);
+	a = sort_more(a, b);
 	return (a);
 }

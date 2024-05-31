@@ -6,7 +6,7 @@
 /*   By: myousaf <myousaf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/07 11:34:32 by myousaf           #+#    #+#             */
-/*   Updated: 2024/05/31 17:28:27 by myousaf          ###   ########.fr       */
+/*   Updated: 2024/06/01 00:16:45 by myousaf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,42 +25,27 @@ int	*parse(int ac, char **av, size_t *arr_sz)
 		split_strings = ft_string_check(av[i]);
 		if (!split_strings)
 		{
-			ft_free_arr(split_strings);
+			free_arr(split_strings);
 			perr (6);
 		}
 		array = ft_join_array(arr_sz, array, split_strings);
 		if ((NULL == array) || (ft_check_doubles(array, *arr_sz) == 1))
 		{
-			ft_free_arr_int(array);
-			perr (6);
+			free_arr_int(array);
+			perr (8);
 		}
 	}
-	// if (ft_check_doubles(array, *arr_sz) == 1) // what about freeing after this?
-	// {
-	// 	ft_free_arr_int(array);
-	// 	perr (8);
-	// }
 	return (array);
 }
 
 void	ft_sort(int *array, int array_size, t_stack *list)
 {
 	list = ft_arr_to_linkedlist(array, array_size);
-	
+	free_arr_int(array);
 	list = ft_alias(list, array_size);
 	if (sorted(list))
 		return ;
 	list = ft_sort_list(list);
-}
-
-int arr_size(int *array)
-{
-	int	i;
-
-	i = 0;
-	while (array[i++])
-		;
-	return (i);
 }
 
 int	main(int ac, char **av)
@@ -77,5 +62,5 @@ int	main(int ac, char **av)
 		perr (2);
 	array = parse (ac, av, &arr_sz);
 	ft_sort(array, arr_sz, &list);
-	return (0);
+	return (free_list(&list), 0);
 }

@@ -6,7 +6,7 @@
 #    By: myousaf <myousaf@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/07 11:33:45 by myousaf           #+#    #+#              #
-#    Updated: 2024/05/31 16:45:09 by myousaf          ###   ########.fr        #
+#    Updated: 2024/05/31 19:12:51 by myousaf          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,23 +14,22 @@ NAME	=	push_swap
 CC		=	cc
 CFLAGS	=	-Wall -Wextra -Werror -g3 -O2 -fsanitize=address
 ARCHIVE	=	./libft/libft.a
-SRC		=	ft_string_check.c \
-			parsing_utils.c \
-			string_check_utils.c \
-			to_linked_list.c \
-			stack_operations_swap.c \
-			stack_operations_push.c \
-			stack_operations_rotate.c \
-			stack_operations_rr.c \
-			sort_two_three.c \
-			sort_four_more.c \
-			sort_list.c \
-			sort_utils.c \
-			sort_till_100.c \
-			sort_large.c \
-			stack_op_utils.c \
-			swap_utils.c \
-			push_swap.c
+SRC		=	./push_swap.c \
+			./alias.c \
+			./parsing_utils.c \
+			./sort.c \
+			./which_sort.c \
+			./sort_three.c \
+			./sort_four_more.c \
+			./sort_utils.c \
+			./stack_op_utils.c \
+			./stack_operations_push.c \
+			./stack_operations_rotate.c \
+			./stack_operations_rr.c \
+			./stack_operations_swap.c \
+			./ft_string_check.c \
+			./string_check_utils.c \
+			./to_linked_list.c
 
 REMOVE	=	a.out \
 			a.out.dSYM \

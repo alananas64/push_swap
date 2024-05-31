@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   to_linked_list.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nosman <nosman@student.42.fr>              +#+  +:+       +#+        */
+/*   By: myousaf <myousaf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/27 18:54:15 by myousaf           #+#    #+#             */
-/*   Updated: 2024/05/31 10:06:32 by nosman           ###   ########.fr       */
+/*   Updated: 2024/06/01 00:14:22 by myousaf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,10 +46,11 @@ void	insert(t_stack **root, int item)
 
 t_stack	*ft_arr_to_linkedlist(int arr[], int n)
 {
-	t_stack	*root = NULL;
+	t_stack	*root;
 	int		i;
 
 	i = 0;
+	root = NULL;
 	while (i < n)
 		insert(&root, arr[i++]);
 	return (root);
