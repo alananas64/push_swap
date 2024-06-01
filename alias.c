@@ -6,7 +6,7 @@
 /*   By: myousaf <myousaf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/27 22:53:17 by myousaf           #+#    #+#             */
-/*   Updated: 2024/06/01 00:13:40 by myousaf          ###   ########.fr       */
+/*   Updated: 2024/06/01 10:12:50 by myousaf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,31 +57,3 @@ t_stack	*ft_alias(t_stack *list, int array_size)
 // counter = 0;
 // counter++;
 // arr[index[0]] = counter;
-// void	ft_init_alias(t_stack **node, t_stack **alias)
-// {
-// 	int		i[5];
-// 	t_stack	*tmp;
-// 	t_stack	*tmp1;
-
-// 	i[0] = 0;
-// 	i[4] = lst_size(*node);
-// 	tmp = (*node);
-// 	while (i[0] < i[4])
-// 	{
-// 		i[3] = tmp->data;
-// 		i[1] = 0;
-// 		i[2] = 0;
-// 		tmp1 = (*node);
-// 		while (i[1] < i[4])
-// 		{
-// 			if (i[3] > tmp1->next->data)
-// 				i[2]++;
-// 			tmp1 = tmp1->next;
-// 			i[1]++;
-// 		}
-// 		tmp1 = tmp1->next;
-// 		custom_alias(alias, i[2]);
-// 		tmp = tmp->next;
-// 		i[0]++;
-// 	}
-// }

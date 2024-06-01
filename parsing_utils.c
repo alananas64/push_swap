@@ -6,7 +6,7 @@
 /*   By: myousaf <myousaf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/07 08:02:28 by myousaf           #+#    #+#             */
-/*   Updated: 2024/05/31 23:41:16 by myousaf          ###   ########.fr       */
+/*   Updated: 2024/06/01 02:47:30 by myousaf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,14 +58,16 @@ int	ft_strarr_len(char **arr)
 
 void	free_list(t_stack *head)
 {
-	t_stack *current;
-	t_stack *next;
+	t_stack	*current;
+	t_stack	*next;
 
 	current = head;
-	while (current != NULL)
+	while (current->next != NULL)
 	{
 		next = current->next;
 		free(current);
+		if (next == NULL)
+			return ;
 		current = next;
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: myousaf <myousaf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/07 11:34:32 by myousaf           #+#    #+#             */
-/*   Updated: 2024/06/01 00:16:45 by myousaf          ###   ########.fr       */
+/*   Updated: 2024/06/01 04:22:47 by myousaf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,19 +38,19 @@ int	*parse(int ac, char **av, size_t *arr_sz)
 	return (array);
 }
 
-void	ft_sort(int *array, int array_size, t_stack *list)
+void	ft_sort(int *array, int array_size, t_stack **list)
 {
-	list = ft_arr_to_linkedlist(array, array_size);
+	*list = ft_arr_to_linkedlist(array, array_size);
 	free_arr_int(array);
-	list = ft_alias(list, array_size);
-	if (sorted(list))
+	*list = ft_alias(*list, array_size);
+	if (sorted(*list))
 		return ;
-	list = ft_sort_list(list);
+	*list = ft_sort_list(*list);
 }
 
 int	main(int ac, char **av)
 {
-	t_stack	list;
+	t_stack	*list;
 	int		*array;
 	size_t	arr_sz;
 
@@ -62,5 +62,5 @@ int	main(int ac, char **av)
 		perr (2);
 	array = parse (ac, av, &arr_sz);
 	ft_sort(array, arr_sz, &list);
-	return (free_list(&list), 0);
+	return (free_list(list), 0);
 }

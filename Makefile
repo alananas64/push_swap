@@ -6,13 +6,13 @@
 #    By: myousaf <myousaf@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/07 11:33:45 by myousaf           #+#    #+#              #
-#    Updated: 2024/05/31 19:12:51 by myousaf          ###   ########.fr        #
+#    Updated: 2024/06/01 10:14:27 by myousaf          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	=	push_swap
 CC		=	cc
-CFLAGS	=	-Wall -Wextra -Werror -g3 -O2 -fsanitize=address
+CFLAGS	=	-Wall -Wextra -Werror -O2
 ARCHIVE	=	./libft/libft.a
 SRC		=	./push_swap.c \
 			./alias.c \
@@ -38,7 +38,7 @@ REMOVE	=	a.out \
 
 OBJ = $(SRC:.c=.o)
 
-$(NAME): $(OBJ) $(ARCHIVE)
+$(NAME): $(OBJ) $(ARCHIVE) Makefile
 	$(CC) $(CFLAGS) $(OBJ) $(ARCHIVE) -o $(NAME)
 
 all:$(NAME)
@@ -55,5 +55,8 @@ fclean: clean
 	@$(RM)r $(NAME) $(REMOVE)
 
 re: fclean all
+
+debug: CFLAGS += -g3 -fsanitize=address
+debug: re
 
 .PHONY: all clean fclean re bonus debug

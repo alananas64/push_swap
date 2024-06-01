@@ -6,7 +6,7 @@
 /*   By: myousaf <myousaf@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/27 18:54:15 by myousaf           #+#    #+#             */
-/*   Updated: 2024/06/01 00:14:22 by myousaf          ###   ########.fr       */
+/*   Updated: 2024/06/01 04:19:10 by myousaf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ void	insert(t_stack **root, int item)
 			ptr = ptr->next;
 		ptr->next = temp;
 	}
+	free_list(temp);
 }
 
 t_stack	*ft_arr_to_linkedlist(int arr[], int n)
