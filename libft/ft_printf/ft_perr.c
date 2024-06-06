@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_perr.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: myousaf <myousaf@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nosman <nosman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/20 19:56:25 by myousaf           #+#    #+#             */
-/*   Updated: 2024/05/28 02:09:12 by myousaf          ###   ########.fr       */
+/*   Created: 2024/06/01 13:12:38 by nosman            #+#    #+#             */
+/*   Updated: 2024/06/03 14:33:06 by nosman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,18 +25,6 @@ void	perr(int int_status)
 	ft_printf("\e[0m");
 	exit (int_status);
 }
-
-// void	perr(char *str)
-// {
-// 	size_t	i;
-
-// 	i = ft_strlen(str) + 14;
-// 	ft_border(i);
-// 	ft_printf("\e[1;31m Error ya: ");
-// 	ft_printf("%s\e[22;0m\n", str);
-// 	ft_border(i);
-// 	exit(5);
-// }
 
 void	mperr(char *str)
 {

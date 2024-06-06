@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: nosman <nosman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/07 07:49:18 by myousaf           #+#    #+#             */
-/*   Updated: 2024/05/31 16:32:20 by nosman           ###   ########.fr       */
+/*   Created: 2024/06/01 13:15:34 by nosman            #+#    #+#             */
+/*   Updated: 2024/06/06 07:45:06 by nosman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,12 @@ long long	ft_atoll(const char *str)
 	}
 	while (str[i])
 	{
+		// if (result * sign < INT_MIN || result * sign > INT_MAX)
+		// 	return (2147483660); //if added normal max won't
 		result = result * 10 + str[i] - '0';
 		i++;
 	}
 	if (result * sign < INT_MIN || result * sign > INT_MAX)
-		perr (7);
+		return (2147483660); // if added bigger will not
 	return (result * sign);
 }

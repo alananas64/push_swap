@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   alias.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: myousaf <myousaf@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nosman <nosman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/27 22:53:17 by myousaf           #+#    #+#             */
-/*   Updated: 2024/06/01 10:12:50 by myousaf          ###   ########.fr       */
+/*   Created: 2024/06/01 13:07:24 by nosman            #+#    #+#             */
+/*   Updated: 2024/06/04 08:02:08 by nosman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 /*
- * index[0]	-	
- * index[1]	-	
+ * index[0]	-
+ * index[1]	-
  * index[2]	-	list length/size
  * index[3]	-	counter
  * removed variable num
@@ -46,14 +46,7 @@ t_stack	*ft_alias(t_stack *list, int array_size)
 		arr[index[0]] = index[3];
 		list = list->next;
 	}
-	return (final = ft_arr_to_linkedlist(arr, array_size));
+	final = ft_arr_to_linkedlist(arr, array_size);
+	free_arr_int(arr);
+	return (final);
 }
-// int		len;
-// len = list_size(list);
-// arr = malloc(sizeof(int) * (len + 1));
-// while (++index[0] < len && list)
-// while (++index[1] < len && temp != NULL)
-// int		counter;
-// counter = 0;
-// counter++;
-// arr[index[0]] = counter;

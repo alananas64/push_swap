@@ -3,16 +3,16 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: myousaf <myousaf@student.42.fr>            +#+  +:+       +#+         #
+#    By: nosman <nosman@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/04/07 11:33:45 by myousaf           #+#    #+#              #
-#    Updated: 2024/06/01 10:14:27 by myousaf          ###   ########.fr        #
+#    Created: 2024/06/01 13:06:59 by nosman            #+#    #+#              #
+#    Updated: 2024/06/03 13:56:01 by nosman           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	=	push_swap
 CC		=	cc
-CFLAGS	=	-Wall -Wextra -Werror -O2
+CFLAGS	=	-Wall -Wextra -Werror -g
 ARCHIVE	=	./libft/libft.a
 SRC		=	./push_swap.c \
 			./alias.c \
@@ -52,7 +52,7 @@ clean:
 
 fclean: clean
 	@make fclean -s -C libft
-	@$(RM)r $(NAME) $(REMOVE)
+	@$(RM)r $(NAME) $(REMOVE) $(ARCHIVE)
 
 re: fclean all
 

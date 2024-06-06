@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   stack_operations_rotate.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: myousaf <myousaf@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nosman <nosman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/19 08:39:11 by nosman            #+#    #+#             */
-/*   Updated: 2024/05/27 19:47:00 by myousaf          ###   ########.fr       */
+/*   Created: 2024/06/01 13:05:26 by nosman            #+#    #+#             */
+/*   Updated: 2024/06/01 13:05:28 by nosman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// while loop after inititalizing 
+// while loop after inititalizing
 // while (temp->next != last_node)
 // 	temp = temp->next;
 void	rotate(t_stack **stack)

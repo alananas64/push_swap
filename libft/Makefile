@@ -3,16 +3,16 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: myousaf <myousaf@student.42.fr>            +#+  +:+       +#+         #
+#    By: nosman <nosman@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/04/08 15:41:48 by myousaf           #+#    #+#              #
-#    Updated: 2024/05/30 20:52:08 by myousaf          ###   ########.fr        #
+#    Created: 2024/06/01 13:07:30 by nosman            #+#    #+#              #
+#    Updated: 2024/06/01 13:07:33 by nosman           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	=	libft.a
 CC		=	cc
-CFLAGS	=	-Wall -Wextra -Werror -g3 -O2 -fsanitize=address
+CFLAGS	=	-Wall -Wextra -Werror
 FR		=	libft.a \
 			.vscode \
 			push_swap.dSYM \

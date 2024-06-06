@@ -3,27 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   parsing_utils.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: myousaf <myousaf@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nosman <nosman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/07 08:02:28 by myousaf           #+#    #+#             */
-/*   Updated: 2024/06/01 02:47:30 by myousaf          ###   ########.fr       */
+/*   Created: 2024/06/01 13:06:48 by nosman            #+#    #+#             */
+/*   Updated: 2024/06/04 09:14:59 by nosman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/**
- * -> nuha said keep it in mind because of memory leaks
- * and also it is not nesseasxzvsrysaafad let me
- * write it khalas yalla no oy
-*/
 void	free_arr(char **arr)
 {
 	size_t	i;
 
 	i = 0;
-	while (arr[++i])
+	while (arr[i])
+	{
 		free(arr[i]);
+		i++;
+	}
 	free(arr);
 }
 
@@ -62,7 +60,7 @@ void	free_list(t_stack *head)
 	t_stack	*next;
 
 	current = head;
-	while (current->next != NULL)
+	while (current != NULL)
 	{
 		next = current->next;
 		free(current);

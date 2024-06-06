@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ascii.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: myousaf <myousaf@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nosman <nosman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/09 06:05:48 by myousaf           #+#    #+#             */
-/*   Updated: 2024/04/09 15:01:57 by myousaf          ###   ########.fr       */
+/*   Created: 2024/06/01 13:15:43 by nosman            #+#    #+#             */
+/*   Updated: 2024/06/04 09:07:41 by nosman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,6 @@ int			ft_atoi(const char *str);
 int			*ft_atoi_ptr(const char *str);
 char		*ft_itoa(int n);
 long long	ft_atoll(const char *str);
+// long long	ft_atoll(char **splited_arr, const char *str, int *array);
 
 #endif

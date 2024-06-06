@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   to_linked_list.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: myousaf <myousaf@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nosman <nosman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/27 18:54:15 by myousaf           #+#    #+#             */
-/*   Updated: 2024/06/01 04:19:10 by myousaf          ###   ########.fr       */
+/*   Created: 2024/06/01 13:04:51 by nosman            #+#    #+#             */
+/*   Updated: 2024/06/04 08:00:50 by nosman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	print(t_stack *root)
 		ft_printf("{%d}->", root->value);
 		root = root->next;
 	}
-	printf("{NULL}\n");
+	ft_printf("{NULL}\n");
 }
 
 void	insert(t_stack **root, int item)
@@ -28,7 +28,7 @@ void	insert(t_stack **root, int item)
 	t_stack	*temp;
 	t_stack	*ptr;
 
-	temp = (t_stack *) malloc(sizeof(t_stack));
+	temp = malloc(sizeof(t_stack));
 	if (!temp)
 		return ;
 	temp->value = item;
@@ -42,7 +42,6 @@ void	insert(t_stack **root, int item)
 			ptr = ptr->next;
 		ptr->next = temp;
 	}
-	free_list(temp);
 }
 
 t_stack	*ft_arr_to_linkedlist(int arr[], int n)

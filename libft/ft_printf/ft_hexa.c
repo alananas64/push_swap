@@ -3,14 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_hexa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: myousaf <myousaf@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nosman <nosman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/20 19:57:49 by myousaf           #+#    #+#             */
-/*   Updated: 2024/04/09 06:12:23 by myousaf          ###   ########.fr       */
+/*   Created: 2024/06/01 13:13:04 by nosman            #+#    #+#             */
+/*   Updated: 2024/06/01 13:13:11 by nosman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include "ft_printf.h"
 #include "ft_printf.h"
 
 int	ft_lilx(unsigned int num)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_operations_push.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: myousaf <myousaf@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nosman <nosman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/18 12:08:03 by nosman            #+#    #+#             */
-/*   Updated: 2024/05/31 19:08:35 by myousaf          ###   ########.fr       */
+/*   Created: 2024/06/01 13:05:35 by nosman            #+#    #+#             */
+/*   Updated: 2024/06/01 13:17:35 by nosman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,7 @@ static void	push(t_stack **from, t_stack **to)
 	t_stack	*curr_b;
 
 	if (*from == NULL)
-	{
-		printf("stack is empty.\n");
 		return ;
-	}
 	else if (!*to)
 	{
 		*to = *from;

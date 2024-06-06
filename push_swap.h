@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: myousaf <myousaf@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nosman <nosman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/12 10:40:33 by myousaf           #+#    #+#             */
-/*   Updated: 2024/06/01 02:52:49 by myousaf          ###   ########.fr       */
+/*   Created: 2024/06/01 13:06:24 by nosman            #+#    #+#             */
+/*   Updated: 2024/06/04 08:01:28 by nosman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,21 +47,11 @@ typedef struct s_stack_node
  * 7	atoll: value not in range of int
  * 8	ft_check_doubles: same value repeated twice
  * 9	ft_sort_list: invalid ammount of numbers
- * 10	
- * 11	
- * 12	
- * 13	
- * 14	
- * 15	
- * 16	
- * 17	
- * 18	
- * 19	
- * 20	
+ * 10
 */
 
 // --- ft_string_check.c ---
-char	**ft_string_check(char *s);
+char	**ft_string_check(char *s, int *ar);
 bool	arg_checker(char **av);
 int		*ft_join_array(size_t *array_size, int *array, char **str);
 int		ft_check_doubles(int *splited_arr, int arrlen);
@@ -115,8 +105,8 @@ void	ss(t_stack **a, t_stack **b);
 
 // --- string_check_utils ---
 int		ft_flag_check(int broken);
-int		ft_sign_check(char **splited_arr, int i);
-int		ft_arr_check(char **splited_arr, int i);
+int		ft_sign_check(char **splited_arr, int i, int *arr);
+int		ft_arr_check(char **splited_arr, int i, int *arr);
 
 // --- alias ---
 t_stack	*ft_alias(t_stack *list, int array_size);

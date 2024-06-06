@@ -3,20 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_string_check.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: myousaf <myousaf@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nosman <nosman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/10 19:40:48 by myousaf           #+#    #+#             */
-/*   Updated: 2024/05/31 23:07:01 by myousaf          ###   ########.fr       */
+/*   Created: 2024/06/01 13:07:12 by nosman            #+#    #+#             */
+/*   Updated: 2024/06/04 10:02:57 by nosman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/**
- * @brief 
- * @param av 
- * @return 
- */
 bool	arg_checker(char **av)
 {
 	int	i;
@@ -28,6 +23,7 @@ bool	arg_checker(char **av)
 	first_element = 0;
 	while (av[++arg])
 	{
+		i = 0;
 		if (av[arg][first_element] == '\0')
 			return (false);
 		while (av[arg][i] && av[arg][i] == ' ')
@@ -63,8 +59,7 @@ int	*ft_join_array(size_t *array_size, int *array, char **str)
 		i[1]++;
 	}
 	free_arr(str);
-	if (*array_size)
-		free(array);
+	free_arr_int(array);
 	*array_size += len;
 	return (new_array);
 }
@@ -87,20 +82,22 @@ int	ft_check_doubles(int *splited_arr, int arrlen)
 	return (0);
 }
 
-char	**ft_string_check(char *s)
+char	**ft_string_check(char *s, int *array)
 {
 	int			i;
-	int			broken;
 	char		**splited_arr;
-	long long	result;
 
 	i = -1;
-	broken = 0;
 	splited_arr = ft_split(s, ' ');
 	while (splited_arr[++i])
 	{
-		ft_arr_check(splited_arr, i);
-		result = ft_atoll(splited_arr[i]);
+		ft_arr_check(splited_arr, i, array);
+		if (ft_atoll(splited_arr[i]) == 2147483660)
+		{
+			free_arr(splited_arr);
+			free_arr_int(array);
+			perr(7);
+		}
 	}
 	return (splited_arr);
 }
