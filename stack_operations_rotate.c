@@ -6,15 +6,12 @@
 /*   By: nosman <nosman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/01 13:05:26 by nosman            #+#    #+#             */
-/*   Updated: 2024/06/01 13:05:28 by nosman           ###   ########.fr       */
+/*   Updated: 2024/06/07 09:16:54 by nosman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// while loop after inititalizing
-// while (temp->next != last_node)
-// 	temp = temp->next;
 void	rotate(t_stack **stack)
 {
 	t_stack	*last_node;

@@ -6,7 +6,7 @@
 /*   By: nosman <nosman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/01 13:06:40 by nosman            #+#    #+#             */
-/*   Updated: 2024/06/04 09:41:24 by nosman           ###   ########.fr       */
+/*   Updated: 2024/06/07 09:18:55 by nosman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,8 @@ int	*parse(int ac, char **av, size_t *arr_sz)
 
 void	ft_sort(int *array, int array_size, t_stack **list)
 {
-	t_stack *temp;
+	t_stack	*temp;
+
 	*list = ft_arr_to_linkedlist(array, array_size);
 	temp = *list;
 	free_arr_int(array);
@@ -48,12 +49,11 @@ void	ft_sort(int *array, int array_size, t_stack **list)
 	free_list(temp);
 	if (sorted(*list))
 	{
-		free_list(*list);// do i have to exit after this free??
+		free_list(*list);
 		return ;
 	}
 	*list = ft_sort_list(*list);
-	free_list(*list); // if i freed it here i wont be able to print it!
-	//...does the changes reached there in the main??
+	free_list(*list);
 }
 
 int	main(int ac, char **av)
@@ -67,10 +67,8 @@ int	main(int ac, char **av)
 	if (ac < 2)
 		return (0);
 	if (arg_checker(av) == false)
-		perr (2); //i don't think if there is an error here i should free because i did not malloc anything asln
+		perr (2);
 	array = parse (ac, av, &arr_sz);
 	ft_sort(array, arr_sz, &list);
-	// free_list(list);
 	return (0);
 }
-//idea for reducing the sorting line i guess i should check from time to time if it is already sorted no need to continue

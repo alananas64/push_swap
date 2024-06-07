@@ -6,7 +6,7 @@
 /*   By: nosman <nosman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/01 13:07:24 by nosman            #+#    #+#             */
-/*   Updated: 2024/06/04 08:02:08 by nosman           ###   ########.fr       */
+/*   Updated: 2024/06/07 09:21:59 by nosman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,8 @@ t_stack	*ft_alias(t_stack *list, int array_size)
 		arr[index[0]] = index[3];
 		list = list->next;
 	}
-	final = ft_arr_to_linkedlist(arr, array_size);
-	free_arr_int(arr);
-	return (final);
+	return (free_arr_int(arr), final = ft_arr_to_linkedlist(arr, array_size));
 }
+
+	// final = ft_arr_to_linkedlist(arr, array_size);
+	// free_arr_int(arr);

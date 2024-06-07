@@ -6,7 +6,7 @@
 /*   By: nosman <nosman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 15:28:17 by nosman            #+#    #+#             */
-/*   Updated: 2024/06/04 08:00:47 by nosman           ###   ########.fr       */
+/*   Updated: 2024/06/07 09:09:29 by nosman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,6 @@ t_stack	*ft_sort_list(t_stack *alias_list)
 	else if (list_len >= 135 && list_len <= 500)
 		alias_list = sort_large(alias_list, stack_b);
 	else
-		perr (9); //why??
+		alias_list = sort_large(alias_list, stack_b);
 	return (alias_list);
 }

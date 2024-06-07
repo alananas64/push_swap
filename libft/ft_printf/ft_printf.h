@@ -6,7 +6,7 @@
 /*   By: nosman <nosman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/01 13:12:21 by nosman            #+#    #+#             */
-/*   Updated: 2024/06/01 13:12:24 by nosman           ###   ########.fr       */
+/*   Updated: 2024/06/07 09:25:04 by nosman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,15 +29,12 @@ void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 
-void	ft_border(size_t i);
-
 /**
  * writes an error message sent as parameters
  * exits with error code int_status.
 */
 void	perr(int int_status);
-void	mperr(char *str);
-void	ft_error(char *str);
+void	ft_border(size_t i);
 
 void	ft_print_arr(char **arr);
 void	ft_print_intarr(int *arr, size_t arr_size);

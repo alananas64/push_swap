@@ -6,7 +6,7 @@
 /*   By: nosman <nosman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/01 13:06:24 by nosman            #+#    #+#             */
-/*   Updated: 2024/06/04 08:01:28 by nosman           ###   ########.fr       */
+/*   Updated: 2024/06/07 09:08:53 by nosman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,6 @@ typedef struct s_stack_node
  * 6	ft_string_check: error spilting strings
  * 7	atoll: value not in range of int
  * 8	ft_check_doubles: same value repeated twice
- * 9	ft_sort_list: invalid ammount of numbers
- * 10
 */
 
 // --- ft_string_check.c ---
