@@ -6,48 +6,36 @@
 /*   By: nosman <nosman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/01 13:07:24 by nosman            #+#    #+#             */
-/*   Updated: 2024/06/07 09:21:59 by nosman           ###   ########.fr       */
+/*   Updated: 2024/06/07 10:24:44 by nosman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/*
- * index[0]	-
- * index[1]	-
- * index[2]	-	list length/size
- * index[3]	-	counter
- * removed variable num
- * removed temp = NULL;
- */
 t_stack	*ft_alias(t_stack *list, int array_size)
 {
 	int		index[4];
 	int		*arr;
-	t_stack	*temp;
-	t_stack	*head;
-	t_stack	*final;
+	t_stack	*final_list[3];
 
-	head = list;
+	final_list[1] = list;
 	index[0] = -1;
 	index[2] = list_size(list);
 	arr = malloc(sizeof(int) * (index[2] + 1));
 	while (++index[0] < index[2] && list)
 	{
-		temp = head;
+		final_list[0] = final_list[1];
 		index[1] = -1;
 		index[3] = 0;
-		while (++index[1] < index[2] && temp != NULL)
+		while (++index[1] < index[2] && final_list[0] != NULL)
 		{
-			if (list->value > temp->value)
+			if (list->value > final_list[0]->value)
 				index[3]++;
-			temp = temp->next;
+			final_list[0] = final_list[0]->next;
 		}
 		arr[index[0]] = index[3];
 		list = list->next;
 	}
-	return (free_arr_int(arr), final = ft_arr_to_linkedlist(arr, array_size));
+	final_list[2] = ft_arr_to_linkedlist(arr, array_size);
+	return (free_arr_int(arr), final_list[2]);
 }
-
-	// final = ft_arr_to_linkedlist(arr, array_size);
-	// free_arr_int(arr);

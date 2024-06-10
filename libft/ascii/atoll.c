@@ -6,7 +6,7 @@
 /*   By: nosman <nosman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/01 13:15:34 by nosman            #+#    #+#             */
-/*   Updated: 2024/06/07 09:25:22 by nosman           ###   ########.fr       */
+/*   Updated: 2024/06/07 10:57:48 by nosman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,8 @@ long long	ft_atoll(const char *str)
 	{
 		result = result * 10 + str[i] - '0';
 		i++;
+		if (result * sign < INT_MIN || result * sign > INT_MAX)
+			return (2147483660);
 	}
-	if (result * sign < INT_MIN || result * sign > INT_MAX)
-		return (2147483660);
 	return (result * sign);
 }
